@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mzantsi Borwa - Safety Experts</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            background-color: #0a1e29;
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header .logo h1 {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        header nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('safety2.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: #d4af37;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #a6822d;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .expertise h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #003366;
+        }
+
+        .industry-cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .industry-card {
+            background-color: #f9f9f9;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .industry-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .industry-card p {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #003366;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #d4af37;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #003366;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: border 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #d4af37;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            background-color: #d4af37;
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a6822d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a1e29;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-btn {
+                font-size: 1.1rem;
+                padding: 15px 35px;
+            }
+
+            .industry-cards-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Mzantsi Borwa</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Safety, Our Priority</h1>
+            <p>Leading safety solutions for industrial, mining, construction, logistics, and more.</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <h2>Our Areas of Expertise</h2>
+        <div class="industry-cards-wrapper">
+            <div class="industry-card">
+                <h3>Industrial Safety</h3>
+                <p>Comprehensive safety management for industries of all scales.</p>
+            </div>
+            <div class="industry-card">
+                <h3>Mining & Construction</h3>
+                <p>Protecting workers in high-risk environments with advanced solutions.</p>
+            </div>
+            <div class="industry-card">
+                <h3>Automotive & Logistics</h3>
+                <p>Ensuring safe transportation and handling in the automotive sector.</p>
+            </div>
+            <div class="industry-card">
+                <h3>Engineering & Manufacturing</h3>
+                <p>Providing safety protocols for engineers and manufacturers to thrive safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"Mzantsi Borwa has been instrumental in implementing safety protocols across our operations, greatly reducing incidents and improving employee wellbeing."</p>
+                <h4>John Doe, Mining Manager</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their expertise in construction safety is second to none. Mzantsi Borwa has been a trusted partner for over 5 years."</p>
+                <h4>Jane Smith, Construction Lead</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <input type="text" placeholder="Your Name" name="name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Your Email" name="email" required>
+            </div>
+            <div class="input-group">
+                <textarea placeholder="Your Message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Mzantsi Borwa. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
